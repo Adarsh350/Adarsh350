@@ -32,6 +32,14 @@ actual cause, and the fix. Most share one root cause — a package ships no `win
 build — surfacing far from that fact as a `spawn EFTYPE`, a zero-byte binary, or an
 `npm install` that exits 0 and installs nothing. All hit and resolved on a real machine.
 
+**[codex-usage](https://github.com/Adarsh350/codex-usage)** — A VS Code status bar reading
+live Codex rate limits over JSON-RPC. It started out parsing local session logs, which was
+wrong in a way that looked right: the newest local record is usually stale, so both windows
+rendered as resetting `now`. Now it calls the documented live endpoint and keeps the logs
+only as a fallback. The fiddly part is WSL, where Codex uses a Linux account store while the
+extension host is still Windows — launch the native binary there and you read a different
+store with an invalid token.
+
 **[graphify-github-obsidian](https://github.com/Adarsh350/graphify-github-obsidian)** —
 Builds knowledge graphs from every repo in a GitHub account and syncs them into Obsidian,
 unattended.
@@ -47,8 +55,14 @@ Agent evaluation, mostly. It is easy to make an agent setup feel better and hard
 that it is, and the gap between those two is where most of the effort in this space is
 currently going to waste.
 
+Smaller things: [claude-session-dot](https://github.com/Adarsh350/claude-session-dot), a
+sidebar telling you which of several running agent sessions has actually stopped and is
+waiting on you — a hook writes the state, the extension only renders it.
+
 ### Elsewhere
 
 Chess takes the rest of the time — 2264 rapid on Lichess, Arena International Master.
-[deepgamecoaching.com](https://deepgamecoaching.com) is the coaching practice; its repo is
-here too.
+[deepgamecoaching.com](https://deepgamecoaching.com) is the coaching practice, and
+[chess-app](https://github.com/Adarsh350/chess-app) is the tool behind it: PGN in, style
+diagnosis and a training plan out, with optional Stockfish review in a web worker. It runs
+entirely on-device — local parsing, IndexedDB storage, no paid API anywhere in it.
