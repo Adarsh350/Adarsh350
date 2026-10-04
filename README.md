@@ -40,10 +40,6 @@ only as a fallback. The fiddly part is WSL, where Codex uses a Linux account sto
 extension host is still Windows — launch the native binary there and you read a different
 store with an invalid token.
 
-**[graphify-github-obsidian](https://github.com/Adarsh350/graphify-github-obsidian)** —
-Builds knowledge graphs from every repo in a GitHub account and syncs them into Obsidian,
-unattended.
-
 **[mailchimp-bounce-monitor-worker](https://github.com/Adarsh350/mailchimp-bounce-monitor-worker)**
 — Cloudflare Worker handling Mailchimp unsubscribe, bounce, abuse and soft-bounce webhooks.
 Deliverability degrades quietly, so the work is in the retry and idempotency paths rather
